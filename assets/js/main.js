@@ -8,7 +8,7 @@ $("#test").click(function() {
 	});
 	console.log("fuck");
 });
-$('#redSlider').slider()
+var r = $('#redSlider').slider()
 	.on("slide", function(num) {
 		var value = num.value;
 		firebase.database().ref("/").update({
@@ -16,7 +16,30 @@ $('#redSlider').slider()
 		});
 	});
 
-$('#brightSlider').slider()
+var g = $('#greenSlider').slider()
+	.on("slide", function(num) {
+		var value = num.value;
+		firebase.database().ref("/").update({
+			G: value
+		});
+	});
+var b = $('#blueSlider').slider()
+	.on("slide", function(num) {
+		var value = num.value;
+		firebase.database().ref("/").update({
+			B: value
+		});
+	});
+  var w = $('#whiteSlider').slider()
+  	.on("slide", function(num) {
+  		var value = num.value;
+  		firebase.database().ref("/").update({
+  			W: value
+  		});
+  	});
+
+
+var bright = $('#brightSlider').slider()
 	.on("slide", function(num) {
 		var value = num.value;
 		firebase.database().ref("/").update({
