@@ -6,11 +6,30 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.0/css/bootstrap-slider.min.css">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
-	<h2 id="test"> Here is some stuff </h2>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<p> RED </p>
+				<input id="redSlider" data-slider-id='redSlider' type="text" data-slider-min="0" data-slider-max="255" data-slider-step="1" data-slider-value="14" />
+			</div>
+			<div class="col-md-4">
+				<p> GREEN </p>
+			</div>
+			<div class="col-md-4">
+				<p> BLUE </p>
+			</div>
+      <div class="col-md-4">
+        <p> Brightness </p>
+        <input id="brightSlider" data-slider-id='whiteSlider' type="text" data-slider-min="0" data-slider-max="255" data-slider-step="1" data-slider-value="14" />
+
+      </div>
+		</div>
+	</div>
 </body>
 <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
 <script>
@@ -26,6 +45,7 @@
 </script>
 <script src="assets/js/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.0/bootstrap-slider.min.js"></script>
 <script src="assets/js/main.js"></script>
 
 </html>
