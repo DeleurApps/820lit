@@ -1,40 +1,50 @@
 var database = firebase.database();
 
-database.ref("/").on('value', function(snapshot){
-  var val = snapshot.val();
-  console.log(val);
-  g.slider('setValue',val.G);
-  b.slider('setValue',val.B);
-  r.slider('setValue',val.R);
-  w.slider('setValue',val.W);
-  bright.slider('setValue',val.brightness);
-  cutoff.slider('setValue',val.cutoff);
-  cycle.slider('setValue',val.cycleSpeed);
-  fade.slider('setValue',val.fade);
-  dim.bootstrapToggle(val.dimcenter ? 'on' : 'off');
-  edge.bootstrapToggle(val.brightedges ? 'on' : 'off');
+database.ref("/").on('value', function(snapshot) {
+	var val = snapshot.val();
+	console.log(val);
+	g.slider('setValue', val.G);
+	b.slider('setValue', val.B);
+	r.slider('setValue', val.R);
+	w.slider('setValue', val.W);
+	bright.slider('setValue', val.brightness);
+	cutoff.slider('setValue', val.cutoff);
+	cycle.slider('setValue', val.cycleSpeed);
+	fade.slider('setValue', val.fade);
+	dim.bootstrapToggle(val.dimcenter ? 'on' : 'off');
+	edge.bootstrapToggle(val.brightedges ? 'on' : 'off');
+	on.bootstrapToggle(val.on ? 'on' : 'off');
+	$("#pat" + val.PatternID).prop('checked', true);
+	$("#dis" + val.DisplayID).prop('checked', true);
+
 });
 
 var setData = function(obj) {
 	return database.ref("/").update(obj);
 };
-$("input[name=pattern]").change(function(v){
-  console.log(this.value);
-  setData({PatternID: parseInt(this.value)});
-  console.log("val");
+$("input[name=pattern]").change(function(v) {
+	console.log(this.value);
+	setData({
+		PatternID: parseInt(this.value)
+	});
 });
 
-$("input[name=display]").change(function(v){
-  console.log(this.value);
-  setData({DisplayID: parseInt(this.value)});
-  console.log("val");
+$("input[name=display]").change(function(v) {
+	console.log(this.value);
+	setData({
+		DisplayID: parseInt(this.value)
+	});
+});
+var on = $("#on").change(function() {
+	setData({
+		on: $(this).prop('checked') ? 1 : 0
+	});
 });
 
 var dim = $('#dimCenter').change(function() {
 	setData({
 		dimcenter: $(this).prop('checked') ? 1 : 0
 	});
-	console.log($(this).prop('checked'));
 });
 var edge = $('#brightEdges').change(function() {
 	setData({
