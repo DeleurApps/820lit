@@ -2,6 +2,11 @@ body {
   background: #EEE;
 }
 
+.container {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
 #redSlider {
   .slider-selection {
     background: #FF8282;
@@ -16,6 +21,7 @@ body {
   .slider-selection {
     background: #428041;
   }
+
   .slider-handle {
     background: green;
   }
@@ -35,6 +41,7 @@ body {
   .slider-track-high {
     background: #DDD;
   }
+
   .slider-handle {
     background: #FFF;
   }
