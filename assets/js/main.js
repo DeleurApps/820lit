@@ -11,9 +11,9 @@ database.ref("/").on('value', function(snapshot) {
 	cutoff.slider('setValue', val.cutoff);
 	cycle.slider('setValue', val.cycleSpeed);
 	fade.slider('setValue', val.fade);
-	dim.bootstrapToggle(val.dimcenter ? 'on' : 'off');
-	edge.bootstrapToggle(val.brightedges ? 'on' : 'off');
-	on.bootstrapToggle(val.on ? 'on' : 'off');
+	dim.bootstrapToggle(val.dimcenter === 1? 'on' : 'off');
+	edge.bootstrapToggle(val.brightedges === 1 ? 'on' : 'off');
+	on.bootstrapToggle(val.on === 1 ? 'on' : 'off');
 	$("#pat" + val.PatternID).prop('checked', true);
 	$("#dis" + val.DisplayID).prop('checked', true);
 
