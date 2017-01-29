@@ -1,0 +1,24 @@
+body {
+  background: #EEE; }
+
+#redSlider .slider-selection {
+  background: #FF8282; }
+#redSlider .slider-handle {
+  background: red; }
+
+#greenSlider .slider-selection {
+  background: #428041; }
+#greenSlider .slider-handle {
+  border-bottom-color: : green; }
+
+#blueSlider .slider-selection {
+  background: #8283FF; }
+#blueSlider .slider-handle {
+  background:  blue; }
+
+
+#whiteSlider {
+  .slider-track-high {
+    background: #AAA;
+  }
+}
